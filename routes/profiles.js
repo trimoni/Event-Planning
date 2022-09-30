@@ -13,6 +13,8 @@ router.get('/:id', isLoggedIn, profilesCtrl.show)
 // POST
 router.post('/:id/interests', isLoggedIn, profilesCtrl.createInterest)
 
+router.delete('/interests/:id', isLoggedIn, profilesCtrl.deleteInterest)
+
 export {
   router
 }

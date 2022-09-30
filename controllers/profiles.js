@@ -45,8 +45,24 @@ function createInterest(req, res){
   })
 }
 
+function deleteInterest(req, res){
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    profile.interests.remove({_id: req.params.id})
+    profile.save()
+    .then(() => {
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect(`/profiles/${req.user.profile._id}`)
+  })
+}
+
 export {
   index,
   show,
-  createInterest
+  createInterest,
+  deleteInterest,
 }
