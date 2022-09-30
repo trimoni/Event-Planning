@@ -1,0 +1,44 @@
+<%- include('../partials/html-head') %> <%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <div>
+    <img
+      class="profile-avatar"
+      src="<%= profile.avatar %>"
+      alt="<%= profile.name %>'s avatar"
+    />
+  </div>
+  <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
+  <% if (isSelf) { %>
+  <form action="/profiles/<%= profile._id %>/interests" method="POST">
+    <label for="catergories">Categories</label>
+    <select name="categories">
+      <option value="Hobbies">Hobbies</option>
+      <option value="Foods">Foods</option>
+      <option value="Movies">Movies</option>
+      <option value="Other">Other</option>
+    </select>
+  </form>
+  <% } %> 
+  <% if (profile.interests.length) { %>
+  <h2>
+    <%= isSelf ? 'Your Interests are:' : `${profile.name}Interests are:` %>
+  </h2>
+  <% profile.interests.forEach(interest => { %> 
+    <h3>
+      <% if (isSelf) {%>
+        <form action="profiles/interests/<%= interest._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete Interest</button>
+        </form>
+        <% } %> 
+    </h3>
+  <% }) %> 
+  <% } else { %>
+    <h2>
+      <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any interests.
+    </h2>
+    <% } %> 
+</main>
+
+<%- include('../partials/footer') %>
