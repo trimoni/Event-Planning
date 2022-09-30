@@ -2,15 +2,8 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
-    </div>
-  <% } %>
+  <h1>INTRO</h1>
+  <h3>Welcome to the Event-Planning website. Expand your social circle by creating your own events, from hiking too going to the movies! People can signup to attend your events and leave comments as well! Have Fun!</h3>
 </main>
 
 <%- include('./partials/footer') %>
