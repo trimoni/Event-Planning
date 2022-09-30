@@ -8,7 +8,12 @@
   <br />
   <div>Date: <%= event.date %></div>
   <br />
-  <button type="submit">Attend</button>
+  <div>Attendance:</div>
+  
+  <form action="/events/<%= event._id %>/profiles" method="POST">
+    <button type="submit">Attend</button>
+  </form>
+  <% if (event.owner.equals(user?.profile._id)) { %>
   <a href="/events/<%= event._id %>/edit">Edit Event</a>
   <form
     action="/events/<%= event._id %>?_method=DELETE"
@@ -16,6 +21,7 @@
   >
     <button type="submit">Delete</button>
   </form>
+  <% } %>
 </main>
 
 <%- include('../partials/footer') %>

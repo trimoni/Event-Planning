@@ -7,7 +7,7 @@ const eventSchema = new Schema({
   details: String,
   date: Date,
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
-  attendance: [{type: Schema.Types.ObjectId, ref: "Profile"}]
+  attend: [{type: Schema.Types.ObjectId, ref: "Profile"}]
 }, {
   timestamps: true
 })

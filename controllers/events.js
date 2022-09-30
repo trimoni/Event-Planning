@@ -89,6 +89,17 @@ function deleteEvent(req, res){
   })
 }
 
+// function addToAttendance(req, res){
+//   Event.findById(req.params.id)
+//   .then(event => {
+//     event.profiles.push(req.body.profile._id)
+//     event.save()
+//     .then(() => {
+//       res.redirect(`/events/${event._id}`)
+//     })
+//   })
+// }
+
 export {
   index,
   newEvents as new,
@@ -97,4 +108,5 @@ export {
   edit,
   update,
   deleteEvent as delete,
+  // addToAttendance
 }
