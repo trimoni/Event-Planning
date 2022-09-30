@@ -1,0 +1,13 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %> </h1>
+  <div>Event Name: <%= event.name %> </div><br>
+  <div>Details: <%= event.details %> </div><br>
+  <div>Date: <%= event.date %> </div><br>
+  <button type="submit">Attend</button>
+  <a href="/events/<%= event._id %>/edit">Edit Event</a>
+  <button type="submit">Delete</button>
+
+<%- include('../partials/footer') %>
