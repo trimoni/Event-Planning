@@ -14,8 +14,27 @@ function index(req, res){
   })
 }
 
+function newEvents(req, res){
+  res.render('events/new', {
+    title: 'Add Event',
+  })
+}
 
+function create(req, res){
+  console.log('ADD EVENT', req.body)
+  req.body.owner = req.user.profile._id
+  Event.create(req.body)
+  .then(event => {
+    res.redirect('/events')
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/events')
+  })
+}
 
 export {
   index,
+  newEvents as new,
+  create,
 }

@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const eventSchema = new Schema({
   name: String,
   details: String,
-  date: Number,
+  date: Date,
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
   attendance: [{type: Schema.Types.ObjectId, ref: "Profile"}]
 }, {

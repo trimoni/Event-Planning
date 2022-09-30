@@ -1,1 +1,32 @@
-<h1>Shalom</h1>
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>EVENTS</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Event Name</th>
+        <th>Date/Time</th>
+        <th>Details</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% events.forEach(event => { %>
+      <tr>
+      <td><%= event.name %> </td>
+      <td><%= event.date %> </td>
+      <td><a href="/events/<%= event._id %>">Details</a> </td>
+      </tr>
+    <% }) %> 
+    </tbody>
+  </table>
+  <% if (user) { %>
+    <form action="/events/" method="POST">
+    </form>
+  <% } %>
+  <a href="/events/new" id="add-event">Add Event</a>
+</section>
+
+<%- include('../partials/footer') %>
