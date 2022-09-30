@@ -13,8 +13,14 @@ router.get('/new', eventsCtrl.new)
 // localhost/events/show
 router.get('/:id', isLoggedIn, eventsCtrl.show)
 
+// localhost/:id/edit
+router.get('/:id/edit', isLoggedIn, eventsCtrl.edit)
+
 // POST localhost/events
 router.post('/', isLoggedIn, eventsCtrl.create)
+
+// PUT update edit
+router.put()
 
 
 export {

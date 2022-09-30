@@ -1,0 +1,22 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %> </h1>
+  <div>Event Name: <%= event.name %> </div><br>
+  <div>Details: <%= event.details %> </div><br>
+  <div>Date: <%= event.date %> </div><br>
+    <form id="new-form" action="/events" method="POST">
+      <label for="name">Event-Name</label>
+      <input type="text" name="name">
+      <label for="details">Details:</label>
+      <input type="textarea" name="details">
+      <label for="date">Date</label>
+      <input type="datetime-local" name="date">
+    </form>
+    <div>
+      <button type="submit">Update-Event</button>
+    </div>
+  </main>
+  
+<%- include('../partials/footer') %>

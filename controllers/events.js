@@ -48,9 +48,24 @@ function show(req, res){
   })
 }
 
+function edit(req, res){
+  Event.findById(req.params.id)
+  .then(event => {
+    res.render('events/edit', {
+      event,
+      title: 'Edit Event'
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/events')
+  })
+}
+
 export {
   index,
   newEvents as new,
   create,
   show,
+  edit,
 }
