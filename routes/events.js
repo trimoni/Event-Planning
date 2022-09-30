@@ -20,7 +20,10 @@ router.get('/:id/edit', isLoggedIn, eventsCtrl.edit)
 router.post('/', isLoggedIn, eventsCtrl.create)
 
 // PUT update edit
-router.put()
+router.put('/:id', isLoggedIn, eventsCtrl.update)
+
+// DELETE
+router.delete('/:id', isLoggedIn, eventsCtrl.delete)
 
 
 export {

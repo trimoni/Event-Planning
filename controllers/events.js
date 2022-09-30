@@ -62,10 +62,39 @@ function edit(req, res){
   })
 }
 
+function update(req, res){
+  Event.findById(req.params.id)
+  .then(event => {
+    if (event.owner.equals(req.user.profile._id)) {
+      event.updateOne(req.body, {new: true})
+      .then(() => {
+        res.redirect(`/events/${event._id}`)
+      })
+    }
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/events')
+  })
+}
+
+function deleteEvent(req, res){
+  Event.findByIdAndDelete(req.params.id)
+  .then(event => {
+    res.redirect('/events')
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/events/show')
+  })
+}
+
 export {
   index,
   newEvents as new,
   create,
   show,
   edit,
+  update,
+  deleteEvent as delete,
 }
