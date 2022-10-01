@@ -9,8 +9,7 @@
   <div>Date: <%= event.date %></div>
   <br />
   <div>Attendance:</div>
-  <ul>
-    <% console.log(`HERE`, event.attend, user.profile._id) %> 
+  <ul> 
   <% event.attend.forEach(attendee => { %>
   <li> <%= attendee.name %> </li>
   <% }) %>
