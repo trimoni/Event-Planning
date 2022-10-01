@@ -19,7 +19,7 @@ router.get('/:id/edit', isLoggedIn, eventsCtrl.edit)
 // POST localhost/events
 router.post('/', isLoggedIn, eventsCtrl.create)
 
-// router.post('/:id/profiles', eventsCtrl.addToAttendance)
+router.put('/:id/profiles/:profileId', isLoggedIn, eventsCtrl.addToAttendance)
 
 // PUT update edit
 router.put('/:id', isLoggedIn, eventsCtrl.update)

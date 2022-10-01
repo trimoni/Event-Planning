@@ -36,6 +36,7 @@ function create(req, res){
 function show(req, res){
   Event.findById(req.params.id)
   .populate('owner')
+  .populate('attend')
   .then(event => {
     res.render('events/show', {
       event,
@@ -89,16 +90,21 @@ function deleteEvent(req, res){
   })
 }
 
-// function addToAttendance(req, res){
-//   Event.findById(req.params.id)
-//   .then(event => {
-//     event.profiles.push(req.body.profile._id)
-//     event.save()
-//     .then(() => {
-//       res.redirect(`/events/${event._id}`)
-//     })
-//   })
-// }
+function addToAttendance(req, res){
+  Event.findById(req.params.id)
+  .then(event => {
+    console.log(event)
+    event.attend.push(req.params.profileId)
+    event.save()
+    .then(() => {
+      res.redirect(`/events/${event._id}`)
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/events/show')
+  })
+}
 
 export {
   index,
@@ -108,5 +114,5 @@ export {
   edit,
   update,
   deleteEvent as delete,
-  // addToAttendance
+  addToAttendance
 }

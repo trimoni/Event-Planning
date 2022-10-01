@@ -9,8 +9,12 @@
   <div>Date: <%= event.date %></div>
   <br />
   <div>Attendance:</div>
-  
-  <form action="/events/<%= event._id %>/profiles" method="POST">
+  <ul>
+  <% event.attend.forEach(attendee => { %>
+  <li> <%= attendee.name %> </li>
+  <% }) %>
+  </ul> 
+  <form action="/events/<%= event._id %>/profiles/<%= user.profile._id%>?_method=PUT" method="POST">
     <button type="submit">Attend</button>
   </form>
   <% if (event.owner.equals(user?.profile._id)) { %>
