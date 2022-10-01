@@ -10,12 +10,13 @@
   <br />
   <div>Attendance:</div>
   <ul>
+    <% console.log(`HERE`, event.attend, user.profile._id) %> 
   <% event.attend.forEach(attendee => { %>
   <li> <%= attendee.name %> </li>
   <% }) %>
   </ul> 
   <form action="/events/<%= event._id %>/profiles/<%= user.profile._id%>?_method=PUT" method="POST">
-    <button type="submit">Attend</button>
+    <button type="submit"><%= event.attend.some(attendee => attendee._id.equals(user.profile._id))? `Not Attend` : `Attend` %></button>
   </form>
   <% if (event.owner.equals(user?.profile._id)) { %>
   <a href="/events/<%= event._id %>/edit">Edit Event</a>

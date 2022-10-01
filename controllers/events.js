@@ -93,8 +93,14 @@ function deleteEvent(req, res){
 function addToAttendance(req, res){
   Event.findById(req.params.id)
   .then(event => {
-    console.log(event)
-    event.attend.push(req.params.profileId)
+    if (event.attend.includes(req.params.profileId)){
+      // if attendee is already there, filter will remove it
+      event.attend = event.attend.filter(attendee => {
+        return attendee._id != req.params.profileId
+      }) 
+    } else{
+      event.attend.push(req.params.profileId)
+    }
     event.save()
     .then(() => {
       res.redirect(`/events/${event._id}`)
