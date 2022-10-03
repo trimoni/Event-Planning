@@ -26,7 +26,6 @@
       `Do Not Attend` : `Attend` %>
     </button>
   </form>
-  <h2>Comments</h2>
   <form
     id="add-review-form"
     action="/events/<%= event._id %>/comments"
@@ -39,15 +38,10 @@
 
   <% if (event.comments.length) { %>
   <table>
-    <thead>
-      <tr>
-        <th>Comments</th>
-      </tr>
-    </thead>
     <tbody>
-      
       <% event.comments.forEach(function(comment) { %>
       <tr>
+        <% if (event.owner.equals(user?.profile._id)) { %>
         <td>
           <form
             action="/events/<%= event._id %>/comments/<%= comment._id%>?_method=DELETE"
@@ -57,6 +51,7 @@
             <button type="submit">X</button>
           </form>
         </td>
+        <% } %>
         <td><%= comment.createdAt.toLocaleDateString() %></td>
         <td><%= comment.content %></td>
         <td><%= comment.owner %></td>
