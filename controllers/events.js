@@ -112,7 +112,10 @@ function addToAttendance(req, res) {
 
 function createComment(req, res) {
   Event.findById(req.params.id)
-    .then((event) => {
+  .then((event) => {
+      console.log('REQ.BODY BEFORE', req.body)
+      req.body.owner = req.user.profile._id
+      console.log('REQ.BODY AFTER', req.body)
       event.comments.push(req.body);
       event
         .save()
