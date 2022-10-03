@@ -19,7 +19,7 @@ router.get('/:id/edit', isLoggedIn, eventsCtrl.edit)
 // POST localhost/events
 router.post('/', isLoggedIn, eventsCtrl.create)
 
-router.post('/:id/comments', eventsCtrl.createComment)
+router.post('/:id/comments', isLoggedIn, eventsCtrl.createComment)
 
 router.put('/:id/profiles/:profileId', isLoggedIn, eventsCtrl.addToAttendance)
 
@@ -28,6 +28,8 @@ router.put('/:id', isLoggedIn, eventsCtrl.update)
 
 // DELETE
 router.delete('/:id', isLoggedIn, eventsCtrl.delete)
+
+router.delete('/:id/comments/:commentId', isLoggedIn, eventsCtrl.deleteComment)
 
 
 export {

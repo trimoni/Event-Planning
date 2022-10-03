@@ -45,8 +45,18 @@
       
       <% event.comments.forEach(function(comment) { %>
       <tr>
+        <td>
+          <form
+            action="/events/<%= event._id %>/comments/<%= comment._id%>?_method=DELETE"
+            class="delete-flight"
+            method="POST"
+          >
+            <button type="submit">X</button>
+          </form>
+        </td>
         <td><%= comment.createdAt.toLocaleDateString() %></td>
         <td><%= comment.content %></td>
+        <td><%= comment.owner %></td>
       </tr>
       <% }) %>
     </tbody>
