@@ -1,4 +1,5 @@
-<%- include('../partials/html-head') %> <%- include('../partials/nav') %>
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
 
 <main>
   <h1><%= title %></h1>
@@ -20,9 +21,9 @@
     action="/events/<%= event._id %>/profiles/<%= user.profile._id%>?_method=PUT"
     method="POST"
   >
-    <button type="submit">
+    <button type="submit" class="btn btn-dark">
       <%= event.attend.some(attendee => attendee._id.equals(user.profile._id))?
-      `Not Attend` : `Attend` %>
+      `Do Not Attend` : `Attend` %>
     </button>
   </form>
   <h2>Comments</h2>
@@ -33,7 +34,7 @@
   >
     <label for="content-textarea">Comment:</label>
     <textarea name="content" id="content-textarea"></textarea>
-    <button type="submit">Add Comment</button>
+    <button type="submit" class="btn btn-secondary">Add Comment</button>
   </form>
 
   <% if (event.comments.length) { %>
@@ -64,9 +65,9 @@
     </tbody>
   </table>
   <% } %> <% if (event.owner.equals(user?.profile._id)) { %>
-  <a href="/events/<%= event._id %>/edit">Edit Event</a>
+  <button type="submit" class="btn btn-primary"><a href="/events/<%= event._id %>/edit">Edit Event</a></button>
   <form action="/events/<%= event._id %>?_method=DELETE" method="POST">
-    <button type="submit">Delete</button>
+    <button type="submit" class="btn btn-danger">Delete</button>
   </form>
   <% } %>
 </main>

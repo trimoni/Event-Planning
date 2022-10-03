@@ -1,9 +1,10 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/events/index.css" />
 <%- include('../partials/nav') %>
 
 <section>
   <h1>EVENTS</h1>
-  <table>
+  <table id="list">
     <thead>
       <tr>
         <th>Event Name</th>
@@ -28,7 +29,7 @@
     <form action="/events/" method="POST">
     </form>
   <% } %>
-  <a href="/events/new" id="add-event">Add Event</a>
+  <button type="button" class="btn btn-success"><a href="/events/new" id="add-event">Add Event</a></button>
 </section>
 
 <%- include('../partials/footer') %>
