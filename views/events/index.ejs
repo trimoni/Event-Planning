@@ -8,6 +8,7 @@
       <tr>
         <th>Event Name</th>
         <th>Date/Time</th>
+        <th>Location</th>
         <th>Details</th>
         <th></th>
       </tr>
@@ -17,6 +18,7 @@
       <tr>
       <td><%= event.name %> </td>
       <td><%= event.date %> </td>
+      <td><%= event.location %> </td>
       <td><a href="/events/<%= event._id %>">Details</a> </td>
       </tr>
     <% }) %> 
