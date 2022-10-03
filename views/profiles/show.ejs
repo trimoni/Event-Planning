@@ -31,24 +31,19 @@
     <%= isSelf ? 'Your Interests are:' : `${profile.name}'s Interests are:` %>
   </h2>
   <table>
-    <thead>
-      <tbody>
   <% profile.interests.forEach(interest => { %> 
     <tr>
       <td>
     <% if (isSelf) {%>
       <form action="/profiles/interests/<%= interest._id %>?_method=DELETE" method="POST">
         <button type="submit">X</button>
-      </td>
+      </form></td>
       <% } %> 
       <td><%= interest.categories %> </td>
       <td><%= interest.description %> </td>
-    </form>
     </tr>
-  </tbody>
-  </thead>
-  </table>
   <% }) %> 
+</table>
   <% } else { %>
     <h2>
       <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any interests.
