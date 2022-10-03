@@ -5,9 +5,10 @@ const Schema = mongoose.Schema
 const interestSchema = new Schema({
   categories: {
     type: String,
-    enum: ['Hobbies', 'Foods', 'Movies', 'Other'],
+    enum: ['Hobbies:', 'Foods:', 'Movies:', 'Other:'],
     text: String,
-  }
+  },
+  description: String,
 }, {
   timestamps: true
 })

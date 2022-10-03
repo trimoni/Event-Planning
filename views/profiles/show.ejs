@@ -1,4 +1,6 @@
-<%- include('../partials/html-head') %> <%- include('../partials/nav') %>
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/profiles/show.css" />
+<%- include('../partials/nav') %>
 
 <main>
   <div>
@@ -13,11 +15,14 @@
   <form action="/profiles/<%= profile._id %>/interests" method="POST">
     <label for="catergories">Categories</label>
     <select name="categories">
-      <option value="Hobbies">Hobbies</option>
-      <option value="Foods">Foods</option>
-      <option value="Movies">Movies</option>
-      <option value="Other">Other</option>
+      <option value="Hobbies:">Hobbies:</option>
+      <option value="Foods:">Foods:</option>
+      <option value="Movies:">Movies:</option>
+      <option value="Other:">Other:</option>
     </select>
+    <br>
+    <textarea name="description"></textarea>
+    <br>
     <button type="submit">Add Interests</button>
   </form>
   <% } %> 
@@ -26,14 +31,17 @@
     <%= isSelf ? 'Your Interests are:' : `${profile.name}Interests are:` %>
   </h2>
   <% profile.interests.forEach(interest => { %> 
-    <h3>
-      <%= interest.categories %>
-      <% if (isSelf) {%>
-        <form action="/profiles/interests/<%= interest._id %>?_method=DELETE" method="POST">
-          <button type="submit">Delete Interest</button>
-        </form>
-        <% } %> 
-    </h3>
+    <tr>
+      <td>
+    <% if (isSelf) {%>
+      <form action="/profiles/interests/<%= interest._id %>?_method=DELETE" method="POST">
+        <button type="submit">X</button>
+      </td>
+      <% } %> 
+      <td><%= interest.categories %> </td>
+      <td><%= interest.description %> </td>
+    </form>
+    </tr>
   <% }) %> 
   <% } else { %>
     <h2>
