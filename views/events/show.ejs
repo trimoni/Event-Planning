@@ -1,17 +1,21 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/events/show.css" />
 <%- include('../partials/nav') %>
 
 <main>
   <h1><%= title %></h1>
-  <div>Event Name: <%= event.name %></div>
+  <div id="details">
+  <div><strong>Event Name: <%= event.name %></strong></div>
   <br />
-  <div>Details: <%= event.details %></div>
+  <div><strong>Details:</strong></div> 
+  <div><%= event.details %></div>
   <br />
   <div>Date: <%= event.date %></div>
   <br />
   <div>Location: <%= event.location %></div>
   <br />
   <div>Attendance:</div>
+</div>
   <ul>
     <% event.attend.forEach(attendee => { %>
     <li><%= attendee.name %></li>
@@ -52,8 +56,8 @@
           </form>
         </td>
         <% } %>
-        <td><%= comment.createdAt.toLocaleDateString() %></td>
         <td><%= comment.content %></td>
+        <td><%= comment.createdAt.toLocaleDateString() %></td>
         <td><%= comment.owner %></td>
       </tr>
       <% }) %>

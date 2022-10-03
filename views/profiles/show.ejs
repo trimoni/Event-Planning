@@ -10,7 +10,7 @@
       alt="<%= profile.name %>'s avatar"
     />
   </div>
-  <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
+  <h1><%= isSelf ? "you" : profile.name %></h1>
   <% if (isSelf) { %>
   <form action="/profiles/<%= profile._id %>/interests" method="POST">
     <label for="catergories">Categories</label>
@@ -28,8 +28,11 @@
   <% } %> 
   <% if (profile.interests.length) { %>
   <h2>
-    <%= isSelf ? 'Your Interests are:' : `${profile.name}Interests are:` %>
+    <%= isSelf ? 'Your Interests are:' : `${profile.name}'s Interests are:` %>
   </h2>
+  <table>
+    <thead>
+      <tbody>
   <% profile.interests.forEach(interest => { %> 
     <tr>
       <td>
@@ -42,6 +45,9 @@
       <td><%= interest.description %> </td>
     </form>
     </tr>
+  </tbody>
+  </thead>
+  </table>
   <% }) %> 
   <% } else { %>
     <h2>
