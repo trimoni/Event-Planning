@@ -112,6 +112,25 @@ function addToAttendance(req, res){
   })
 }
 
+function createComment(req, res){
+  Event.findById(req.params.id)
+  .then(event => {
+    event.comments.push(req.body)
+    event.save()
+    .then(() => {
+      res.redirect(`/events/${event._id}`)
+    })
+    .catch(error => {
+      console.log(error)
+      res.redirect('/')
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
   newEvents as new,
@@ -120,5 +139,6 @@ export {
   edit,
   update,
   deleteEvent as delete,
-  addToAttendance
+  addToAttendance,
+  createComment
 }
