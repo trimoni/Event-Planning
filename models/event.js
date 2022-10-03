@@ -13,6 +13,7 @@ const eventSchema = new Schema({
   name: String,
   details: String,
   date: Date,
+  location: String,
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
   attend: [{type: Schema.Types.ObjectId, ref: "Profile"}],
   comments: [commentSchema]
