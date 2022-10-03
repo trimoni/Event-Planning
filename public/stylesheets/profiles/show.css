@@ -37,8 +37,6 @@ section div:nth-child(even) {
   font-weight: bold;
 }
 
-#detail {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#interest-button{
+  margin-left: 45px;
 }
