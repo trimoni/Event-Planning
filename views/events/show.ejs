@@ -5,16 +5,19 @@
 <main>
   <h1><%= title %></h1>
   <div id="details">
-  <div><strong>Event Name: <%= event.name %></strong></div>
+  <div><strong>Event Name:</strong></div> 
+  <div><%= event.name %></div>
   <br />
   <div><strong>Details:</strong></div> 
   <div><%= event.details %></div>
   <br />
-  <div>Date: <%= event.date %></div>
+  <div><strong>Date</strong></div> 
+  <div><%= event.date %></div>
   <br />
-  <div>Location: <%= event.location %></div>
+  <div><strong>Location</strong></div> 
+  <div><%= event.location %></div>
   <br />
-  <div>Attendance:</div>
+  <div><strong>Attendance:</strong></div>
 </div>
   <ul>
     <% event.attend.forEach(attendee => { %>

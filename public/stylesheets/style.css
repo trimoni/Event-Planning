@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background-color: white;
+  background-color: #fff5ee;
   color: black;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
@@ -40,6 +40,7 @@ main {
 h1 {
   margin-top: 100px;
   font-size: 36px;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
 
 h2 {
@@ -49,11 +50,17 @@ h2 {
 
 h3 {
   position:relative;
-  width: 50%;
-  height: 50%;
+  width: 35%;
+  height: 100%;
   font-size: 20px;
   text-align: center;
   border: solid black 2px;
+  padding: 10px;
+  font-family:monospace
+}
+
+#icons {
+  margin-bottom: 100px;
 }
 
 ul {
@@ -91,9 +98,7 @@ nav > a {
 
 #event {
   display: inline-block;
-  padding: 0.5em 3em;
-  border: 0.16em solid #FFFFFF;
-  margin: 0 0.3em 0.3em 0;
+  padding: 0.1em 1em;
   box-sizing: border-box;
 }
 
