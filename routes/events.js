@@ -8,7 +8,7 @@ const router = Router()
 router.get('/', eventsCtrl.index)
 
 // localhost/events/new
-router.get('/new', eventsCtrl.new)
+router.get('/new', isLoggedIn, eventsCtrl.new)
 
 // localhost/events/show
 router.get('/:id', isLoggedIn, eventsCtrl.show)
