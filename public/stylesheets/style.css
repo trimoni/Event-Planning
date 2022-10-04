@@ -51,13 +51,16 @@ h2 {
 
 h3 {
   position:relative;
-  width: 35%;
   height: 100%;
   font-size: 20px;
   text-align: center;
   border: solid black 2px;
   padding: 10px;
   font-family:monospace
+}
+
+#spacing {
+  width: 30%;
 }
 
 #socials {

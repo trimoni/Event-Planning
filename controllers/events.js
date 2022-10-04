@@ -20,7 +20,11 @@ function newEvents(req, res) {
   });
 }
 
+const date = new Date().toLocaleDateString()
+const time = new Date().toLocaleTimeString()
+
 function create(req, res) {
+  console.log('DATETIME', date, time)
   console.log("ADD EVENT", req.body);
   req.body.owner = req.user.profile._id;
   Event.create(req.body)
