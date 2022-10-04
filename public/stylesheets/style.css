@@ -45,7 +45,8 @@ h1 {
 
 h2 {
   font-size: 30px;
-  margin-top: 50px;
+  margin-top: 30px;
+  padding: 20px;
 }
 
 h3 {
@@ -59,7 +60,11 @@ h3 {
   font-family:monospace
 }
 
-#icons {
+#socials {
+  height: -50%;
+}
+
+.icons {
   margin-bottom: 100px;
 }
 

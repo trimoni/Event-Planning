@@ -41,7 +41,7 @@ section div:nth-child(even) {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 #add-review-form > textarea {
@@ -58,7 +58,4 @@ section div:nth-child(even) {
 #details {
   font-size: 24px;
   text-align: center;
-  /* display: flex;
-  flex-wrap: wrap;
-  padding: 100px; */
 }
