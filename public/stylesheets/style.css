@@ -38,18 +38,22 @@ main {
 }
 
 h1 {
+  margin-top: 100px;
   font-size: 36px;
 }
 
 h2 {
   font-size: 30px;
+  margin-top: 50px;
 }
 
 h3 {
-  font-size: 24px;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 200px;
+  position:relative;
+  width: 50%;
+  height: 50%;
+  font-size: 20px;
+  text-align: center;
+  border: solid black 2px;
 }
 
 ul {
