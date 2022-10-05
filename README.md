@@ -28,4 +28,4 @@ There is an Interests page that Users can view. They can select any User that ha
 
 The User can provide details about themselves regarding: Hobbies, Foods, Movies, and Other. That way people can know a bit about each User on the website!
 
-## Plan An Event [Event-Planner](https://eventplanner-rimoni.fly.dev/)
+## Plan An Event: [Event-Planner](https://eventplanner-rimoni.fly.dev/)
