@@ -1,3 +1,13 @@
+ul {
+  margin: 0 0 16px;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  font-weight: bold;
+}
+
 table {
   font-size: 20px;
 }
