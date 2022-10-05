@@ -30,19 +30,16 @@ The User can provide details about themselves regarding: Hobbies, Foods, Movies,
 
 ## Plan An Event: [Event-Planner](https://eventplanner-rimoni.fly.dev/)
 
-## Languages used 🗯
+## This Website Uses 🔧
 
  * HTML
  * CSS
  * JavaScript
- * git
-
-## BackEnd used 🔧
-
- * Node.js
- * Express
+ * MongoDB
  * Mongoose
- * Middleware
+ * Node.js/Express
+ * EJS
+ * git
 
 ## Credits:
 
