@@ -5,20 +5,23 @@
 <main>
   <h1><%= title %></h1>
   <div id="details">
-  <div><strong>Event Name:</strong></div> 
-  <div><%= event.name %></div>
-  <br />
-  <div><strong>Details:</strong></div> 
-  <div><%= event.details %></div>
-  <br />
-  <div><strong>Date/Time</strong></div> 
-  <div><%= event.date.toLocaleDateString() %> <%= event.date.toLocaleTimeString() %> </div>
-  <br />
-  <div><strong>Location</strong></div> 
-  <div><%= event.location %></div>
-  <br />
-  <div><strong>Attendance:</strong></div>
-</div>
+    <div><strong>Event Name:</strong></div>
+    <div><%= event.name %></div>
+    <br />
+    <div><strong>Details:</strong></div>
+    <div><%= event.details %></div>
+    <br />
+    <div><strong>Date/Time</strong></div>
+    <div>
+      <%= event.date.toLocaleDateString() %> <%= event.date.toLocaleTimeString()
+      %>
+    </div>
+    <br />
+    <div><strong>Location</strong></div>
+    <div><%= event.location %></div>
+    <br />
+    <div><strong>Attendance:</strong></div>
+  </div>
   <ul>
     <% event.attend.forEach(attendee => { %>
     <li><%= attendee.name %></li>
@@ -34,7 +37,7 @@
     </button>
   </form>
   <form
-    id="add-review-form"
+    id="add-comment-form"
     action="/events/<%= event._id %>/comments"
     method="POST"
   >
@@ -47,7 +50,7 @@
   <table>
     <tbody>
       <% event.comments.forEach(function(comment) { %>
-        
+
       <tr>
         <% if (comment.owner.equals(user?.profile._id)) { %>
         <td>
@@ -67,7 +70,9 @@
     </tbody>
   </table>
   <% } %> <% if (event.owner.equals(user?.profile._id)) { %>
-  <button type="submit" class="btn btn-primary"><a href="/events/<%= event._id %>/edit">Edit Event</a></button>
+  <button type="submit" class="btn btn-primary">
+    <a href="/events/<%= event._id %>/edit">Edit Event</a>
+  </button>
   <form action="/events/<%= event._id %>?_method=DELETE" method="POST">
     <button type="submit" class="btn btn-danger">Delete</button>
   </form>

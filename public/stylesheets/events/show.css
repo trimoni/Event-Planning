@@ -1,20 +1,5 @@
-ul {
-  margin: 0 0 16px;
-  padding: 0;
-  list-style: none;
-}
-
-li {
-  font-weight: bold;
-}
-
 table {
   font-size: 20px;
-}
-
-table thead th {
-  padding: 5px;
-  border-bottom: 2px solid #424748;
 }
 
 table td {
@@ -27,28 +12,18 @@ form * {
   border-radius: 5px;
 }
 
-section {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 16px;
-}
-
-section div:nth-child(even) {
-  font-weight: bold;
-}
-
-#add-review-form {
+#add-comment-form {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 16px;
   margin-bottom: 0px;
 }
 
-#add-review-form > textarea {
+#add-comment-form > textarea {
   width: 275px;
 }
 
-#add-review-form > button {
+#add-comment-form > button {
   font-size: 16px;
   width: 160px;
   grid-column: 2 / 3;

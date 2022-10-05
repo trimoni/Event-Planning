@@ -4,13 +4,10 @@ import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
-// GET localhost:3000/profiles
 router.get('/', isLoggedIn, profilesCtrl.index)
 
-// GET localhost:3000/:id
 router.get('/:id', isLoggedIn, profilesCtrl.show)
 
-// POST
 router.post('/:id/interests', isLoggedIn, profilesCtrl.createInterest)
 
 router.delete('/interests/:id', isLoggedIn, profilesCtrl.deleteInterest)

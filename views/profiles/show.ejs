@@ -20,35 +20,40 @@
       <option value="Movies:">Movies:</option>
       <option value="Other:">Other:</option>
     </select>
-    <br>
+    <br />
     <textarea name="description" cols="21"></textarea>
-    <br>
-    <button type="submit" id="interest-button" class="btn btn-primary">Add Interests</button>
+    <br />
+    <button type="submit" id="interest-button" class="btn btn-primary">
+      Add Interests
+    </button>
   </form>
-  <% } %> 
-  <% if (profile.interests.length) { %>
+  <% } %> <% if (profile.interests.length) { %>
   <h2>
     <%= isSelf ? 'Your Interests are:' : `${profile.name}'s Interests are:` %>
   </h2>
   <table>
-  <% profile.interests.forEach(interest => { %> 
+    <% profile.interests.forEach(interest => { %>
     <tr>
       <td>
-    <% if (isSelf) {%>
-      <form action="/profiles/interests/<%= interest._id %>?_method=DELETE" method="POST">
-        <button type="submit">X</button>
-      </form></td>
-      <% } %> 
-      <td><%= interest.categories %> </td>
-      <td><%= interest.description %> </td>
+        <% if (isSelf) {%>
+        <form
+          action="/profiles/interests/<%= interest._id %>?_method=DELETE"
+          method="POST"
+        >
+          <button type="submit">X</button>
+        </form>
+      </td>
+      <% } %>
+      <td><%= interest.categories %></td>
+      <td><%= interest.description %></td>
     </tr>
-  <% }) %> 
-</table>
+    <% }) %>
+  </table>
   <% } else { %>
-    <h2>
-      <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any interests.
-    </h2>
-    <% } %> 
+  <h2>
+    <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any interests.
+  </h2>
+  <% } %>
 </main>
 
 <%- include('../partials/footer') %>
