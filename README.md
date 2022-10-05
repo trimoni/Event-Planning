@@ -43,3 +43,7 @@ The User can provide details about themselves regarding: Hobbies, Foods, Movies,
  * Express
  * Mongoose
  * Middleware
+
+## Credits:
+
+Button Colors & Cards for 'Events' were utilized from Bootstrap.com, which is licensed by MIT - [link](https://getbootstrap.com/)
