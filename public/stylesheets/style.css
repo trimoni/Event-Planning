@@ -104,10 +104,14 @@ nav > a {
   justify-content: center;
 }
 
-#event {
+#event, #interest {
   display: inline-block;
   padding: 0.1em 1em;
   box-sizing: border-box;
+}
+
+#event:hover, #interest:hover {
+  animation: jello 0.5s ease-in infinite;
 }
 
 .btn {
