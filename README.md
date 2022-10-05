@@ -52,7 +52,7 @@ Button Colors & Cards for 'Events' were utilized from Bootstrap.com, which is li
 
 - [ ] Dark Mode
 - [ ] Create Keywords so Users can find events easily
-- [ ] Organize Events from closest too farthest date 
+- [ ] Organize Events from closest too farthest dates 
 - [x] Font Design
 - [x] Comment Section
 - [x] Add a Favicon
