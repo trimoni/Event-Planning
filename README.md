@@ -45,6 +45,8 @@ The User can provide details about themselves regarding: Hobbies, Foods, Movies,
 
 Button Colors & Cards for 'Events' were utilized from Bootstrap.com, which is licensed by MIT - [link](https://getbootstrap.com/)
 
+Animation on Navigation bar for 'Events' & 'Interests' were utilized from animate.css, created by Daniel Eden, Elton Mesquita, and Waren Gonzagawhich - [link](https://animate.style/)
+
 ## Ice Box ❆
 
 - [ ] Dark Mode
