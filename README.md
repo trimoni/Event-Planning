@@ -20,7 +20,7 @@ If the event planner clicks on the edit details button, they are given the same 
 
 ## Interests
 
-![Interest Page](public/images/interestpage.jpg)
+![Interest Page](public/images/newinterestpage.jpg)
 
 There is an Interests page that Users can view. They can select any User that has logged in and see fun facts about every user!
 
