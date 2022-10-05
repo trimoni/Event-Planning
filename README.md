@@ -16,4 +16,11 @@ Once an event is created, Users can click on the details of the event and are pr
 
 If the event planner clicks on the edit details button, they are given the same layout to change all the details of the event!
 
+## Interests
+
+![Interest Page](public/images/interestpage.jpg)
+
+There is
+
+
 
