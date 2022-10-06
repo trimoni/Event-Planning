@@ -7,7 +7,6 @@ const interestSchema = new Schema(
     categories: {
       type: String,
       enum: ["Hobbies:", "Foods:", "Movies:", "Other:"],
-      text: String,
     },
     description: String,
   },
