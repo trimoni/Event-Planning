@@ -4,6 +4,9 @@
 
 <main>
   <h1>EVENTS</h1>
+  <button type="button" class="btn btn-success">
+    <a href="/events/new" id="add-event">Add Event</a>
+  </button>
   <table id="list">
     <tbody>
       <div class="card-container">
@@ -37,9 +40,6 @@
   <% if (user) { %>
   <form action="/events/" method="POST"></form>
   <% } %>
-  <button type="button" class="btn btn-success">
-    <a href="/events/new" id="add-event">Add Event</a>
-  </button>
 </main>
 
 <%- include('../partials/footer') %>
