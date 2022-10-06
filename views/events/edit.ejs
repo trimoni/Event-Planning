@@ -13,9 +13,9 @@
       <label for="name">Event-Name</label>
       <input type="text" name="name" value= '<%= event.name %>'>
       <label for="details">Details:</label>
-      <textarea id= '<%= event.details %>' name="details" rows="4"></textarea>
+      <textarea name="details" rows="4"><%= event.details %></textarea>
       <label for="date">Date</label>
-      <input value= <%= event.date %> type="datetime-local" name="date">
+      <input value= <%= event.date %> type="datetime-local" name="date" required>
       <label for="location">Location</label>
       <input value= '<%= event.location %>' type="text" name="location">
       <button type="submit">Update-Event</button>
