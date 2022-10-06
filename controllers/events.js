@@ -20,11 +20,11 @@ function newEvents(req, res) {
   });
 }
 
-const date = new Date().toLocaleDateString()
-const time = new Date().toLocaleTimeString()
+const date = new Date().toLocaleDateString();
+const time = new Date().toLocaleTimeString();
 
 function create(req, res) {
-  console.log('DATETIME', date, time)
+  console.log("DATETIME", date, time);
   console.log("ADD EVENT", req.body);
   req.body.owner = req.user.profile._id;
   Event.create(req.body)
@@ -97,7 +97,6 @@ function addToAttendance(req, res) {
   Event.findById(req.params.id)
     .then((event) => {
       if (event.attend.includes(req.params.profileId)) {
-        // if attendee is already there, filter will remove it
         event.attend = event.attend.filter((attendee) => {
           return attendee._id != req.params.profileId;
         });
@@ -116,10 +115,10 @@ function addToAttendance(req, res) {
 
 function createComment(req, res) {
   Event.findById(req.params.id)
-  .then((event) => {
-      console.log('REQ.BODY BEFORE', req.body)
-      req.body.owner = req.user.profile._id
-      console.log('REQ.BODY AFTER', req.body)
+    .then((event) => {
+      console.log("REQ.BODY BEFORE", req.body);
+      req.body.owner = req.user.profile._id;
+      console.log("REQ.BODY AFTER", req.body);
       event.comments.push(req.body);
       event
         .save()
@@ -139,16 +138,17 @@ function createComment(req, res) {
 
 function deleteComment(req, res) {
   Event.findById(req.params.id)
-    .then(event => {
-      event.comments.remove(req.params.commentId)
-      event.save()
-      .then(() => {
-        res.redirect(`/events/${event._id}`)
-      })
-      .catch((error) => {
-        console.log(error);
-        res.redirect("/");
-      });
+    .then((event) => {
+      event.comments.remove(req.params.commentId);
+      event
+        .save()
+        .then(() => {
+          res.redirect(`/events/${event._id}`);
+        })
+        .catch((error) => {
+          console.log(error);
+          res.redirect("/");
+        });
     })
     .catch((error) => {
       console.log(error);
