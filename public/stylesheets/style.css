@@ -63,16 +63,8 @@ h3 {
   width: 30%;
 }
 
-#socials {
-  height: -50%;
-}
-
 .icons {
   margin-bottom: 100px;
-}
-
-ul {
-  list-style-type: none;
 }
 
 p, label, li, button, input {
@@ -83,16 +75,8 @@ label {
   font-weight: bold;
 }
 
-section {
-  padding: 50px;
-}
-
 a {
   color: white;
-}
-
-pre {
-  font-size: 14px;
 }
 
 nav > a {
@@ -116,16 +100,6 @@ nav > a {
 
 .btn {
   margin: 16px 0;
-}
-
-.link {
-  padding: 10px 0;
-  font-size: 18px;
-  display: inline-block;
-}
-
-.profile-avatar {
-  margin-top: 50px;
 }
 
 #add-event {
