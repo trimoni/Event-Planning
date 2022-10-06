@@ -47,6 +47,7 @@ Animation on Navigation bar for 'Events' & 'Interests' were utilized from animat
 - [ ] Create Keywords so Users can find events easily
 - [ ] Organize Events from closest too farthest dates 
 - [ ] Require Description in Interest
+- [ ] Fix editing text feature on edit page
 - [x] Font Design
 - [x] Comment Section
 - [x] Add a Favicon
