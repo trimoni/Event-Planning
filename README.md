@@ -30,6 +30,10 @@ The User can provide details about themselves regarding: Hobbies, Foods, Movies,
 
 ## Plan An Event: [Event-Planner](https://eventplanner-rimoni.fly.dev/)
 
+## Trello/Wireframe:
+[WireFrame](https://whimsical.com/eventplanning-wireframe-2EQeGu9LhPJy9kZ92A578H)
+[Trello](https://trello.com/invite/b/o9CpjAdh/62e3cd21ad52286ebd12a0b2c9d69644/eventplanning)
+
 ## This Website Uses 🔧
 
  * HTML
